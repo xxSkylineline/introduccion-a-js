@@ -1,22 +1,17 @@
-
-
 const $botonArray = document.querySelector('#botonArray')
+const arrayLista = document.querySelectorAll('li');
+const arrayOrdenado = []
+let numeroEnroque
+let numeroMayor = 0;
+let numeroMenor;
+let promedioAcumulador = 0;
+let CantidadRepetida = 0
+let promedio = 0
+let $muestraNumeroMasRepetido;
+let muestraMayor;
+let contador;
 
-$botonArray.onclick = function () {
-
-    const arrayLista = document.querySelectorAll('li');
-    const arrayOrdenado = []
-    let numeroEnroque
-    let numeroMayor = 0;
-    let numeroMenor;
-    let promedioAcumulador = 0;
-    let CantidadRepetida = 0
-    let promedio = 0
-    let $muestraNumeroMasRepetido;
-    let muestraMayor;
-    let contador;
-    //array creado para pasar el LI de texto a numero
-
+function creaArrayDeNumeros() {
     for (i = 0; i < arrayLista.length; i++) {
 
         arrayOrdenado.push(Number(arrayLista[i].textContent))
@@ -24,20 +19,10 @@ $botonArray.onclick = function () {
         console.log(arrayOrdenado)
     }
 
-    //calcula el promedio
-    for (i = 0; i < arrayOrdenado[i]; i++) {
-        promedioAcumulador = promedioAcumulador + arrayOrdenado[i]
-    }
+    return arrayOrdenado
+}
 
-    promedio = Math.floor(promedioAcumulador / arrayOrdenado.length)
-
-    const $promedioHTML = document.querySelector('#promedio');
-    $promedioHTML.textContent = `El promedio es ${promedio}`
-
-
-
-
-    //ordenar de mayor a menor el array
+function ordenaArray(){
     for (j = 0; j < arrayOrdenado.length; j++) {
 
         for (i = 0; i < arrayOrdenado.length; i++) {
@@ -53,9 +38,20 @@ $botonArray.onclick = function () {
         console.log(arrayOrdenado)
     }
 
+    return arrayOrdenado
+}
 
-    //Muestra el numero mayor
+function calculaPromedio() {
+    for (i = 0; i < arrayOrdenado[i]; i++) {
+        promedioAcumulador = promedioAcumulador + arrayOrdenado[i]
+    }
 
+    promedio = Math.floor(promedioAcumulador / arrayOrdenado.length)
+
+    return promedio
+}
+
+function buscaMayor() {
     for (i = 0; i < arrayOrdenado.length; i++) {
 
         if (arrayOrdenado[i] > numeroMayor) {
@@ -64,10 +60,10 @@ $botonArray.onclick = function () {
         console.log(numeroMayor)
     }
 
-    const $NumeroMayor = document.querySelector('#NumeroMayor')
-    $NumeroMayor.textContent = `El número más grande es ${numeroMayor}`;
+    return numeroMayor
+}
 
-    //Muestra el numero menor
+function buscaMenor() {
     numeroMenor = numeroMayor
 
     for (i = 0; i < arrayOrdenado.length; i++) {
@@ -77,11 +73,11 @@ $botonArray.onclick = function () {
         console.log(numeroMenor)
     }
 
-    const $muestraNumeroMenor = document.querySelector('#numeroMenor')
-    $muestraNumeroMenor.textContent = `El número más pequeño es ${numeroMenor}`;
+    return numeroMenor
 
-    //muestra el numero repetido
+}
 
+function muestraNumeroRepetido() {
     for (i = 0; i < arrayOrdenado.length; i++) {
 
 
@@ -105,8 +101,18 @@ $botonArray.onclick = function () {
         contador = 0
     }
 
-    $muestraNumeroMasRepetido = document.querySelector('#numeroRepetido')
-    $muestraNumeroMasRepetido.textContent = `El número más frecuente es: ${muestraMayor}`
+    return muestraMayor
+}
+
+
+$botonArray.onclick = function () {
+
+    creaArrayDeNumeros()
+    ordenaArray()
+    document.querySelector('#promedio').textContent = `El promedio es ${calculaPromedio()}`
+    document.querySelector('#NumeroMayor').textContent = `El número más grande es ${buscaMayor()}`;
+    document.querySelector('#numeroMenor').textContent = `El número más pequeño es ${buscaMenor()}`;
+    document.querySelector('#numeroRepetido').textContent = `El número más frecuente es: ${muestraNumeroRepetido()}`
 
 }
 
@@ -128,4 +134,3 @@ $botonReset.onclick = function () {
 
 
 }
-
