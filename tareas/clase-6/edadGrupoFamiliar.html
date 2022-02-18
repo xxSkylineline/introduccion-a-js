@@ -5,43 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarea clase 6</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./tarea6.css">
+    <title>Tarea Clase 6</title>
 </head>
 
 <body>
-    <h1>Integrantes y salarios</h1>
-    <br>
-    <br>
+    <h1>Edad del grupo familiar</h1>
 
-    <div>
-        <div id="inputs">
-            <form action="" id="inputEdad">
-                <label for="cantidadFamiliares">Ingresar la cantidad de integrantes de tu familia</label>
-                <input type="number" id="cantidadIntegrantes">
-                <br>
-                <input type="submit" value="Crear campos" id="mostrarCampos">
-            </form>
-        </div>
-        <div id="camposFamiliares">
-            <form action="" id="edadGrupoFamiliar">
-
-            </form>
-        </div>
-        <input type="submit" value="Calcular" class="oculto" id="calculaEdad">
-        <input type="submit" value="Empezar de nuevo" class="oculto" id="empezarDeNuevo">
+    <div id="datosFamilia">
+        <label for="cantidadMiembros"> Ingresa la cantidad de miembros que tiene tu familia</label>
         <br>
+        <input type="number" id="cantidadMiembros" placeholder="Miembros">
         <br>
-        <em id='edadPromedio'></em>
-        <br>
-        <em id='edadMayor'></em>
-        <br>
-        <em id='edadMenor'></em>
+        <input type="submit" id="creaCampos" value="Crear Campos">
     </div>
 
+    <div id="contenedorGrupoFamiliar">
+    </div>
+
+    <input type="button" value="Calcular" class="oculto" id="mostrarInfo">
+
+    <div class="oculto" id="resultados">
+        <em class="" id="edadMayor"></em>
+        <em class="" id="edadMenor"></em>
+        <em class="" id="promedioEdad"></em>
+
+    </div>
+
+    <input type="submit" class="oculto" value="calcular" id="Calcula">
+    <input type="submit" value="Reset" class="oculto" id="reset">
+    <br>
+    <br>
+
+    <div class="oculto" id="salarioFamiliar">
+        <h2>Salarios</h2>
+        <input type="submit" value="Agregar Campo" id="agregaCampo">
+        <input type="submit" value="Quitar Campo" id="quitaCampo">
+    </div>
+    
+    <div class="oculto" id="salarios-grupo-familiar">
+        <input type="submit" id="calcula-salario" value="Calcular">
+    </div>
+    <div class="oculto" id="resultados-salario">
+        <em id="salario-mayor"></em>
+        <em id="salario-menor"></em>
+        <em id="salario-promedio"></em>
+    </div>
+    <link rel="stylesheet" href="./tarea6.css">
+    <script src="./calculos_tarea6.js"></script>
     <script src="./edadGrupoFamiliar.js"></script>
 </body>
 
