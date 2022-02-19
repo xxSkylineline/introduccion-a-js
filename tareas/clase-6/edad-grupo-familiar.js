@@ -187,7 +187,7 @@ function crearInput(elemento){
 
 function eliminarCampo(valor){
     for(let i = 0; i < valor.length; i++){
-        if( i+1 == valor.length){
+        if( i + 1 == valor.length){
             valor[i].remove();
         }
     }
