@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./tarea6.css">
+    <title>Tarea Clase 6</title>
+</head>
+
+<body>
+    <h1>Edad del grupo familiar</h1>
+
+    <div id="datosFamilia">
+        <label for="cantidadMiembros"> Ingresa la cantidad de miembros que tiene tu familia</label>
+        <br>
+        <input type="number" id="cantidad-miembros" placeholder="Miembros">
+        <br>
+        <input type="submit" id="crear-campos" value="Crear Campos">
+    </div>
+
+    <div class="oculto" id="contenedor-grupo-familiar">
+    </div>
+
+    <input type="button" value="Calcular" class="oculto" id="mostrar-info">
+    <input type="submit" value="Reset" class="oculto" id="reset">
+
+    <div class="oculto" id="resultados">
+        <em id="edad-mayor"></em>
+        <em id="edad-menor"></em>
+        <em id="promedio-edad"></em>
+    </div>
+
+    <div class="oculto" id="salario-familiar">
+        <h2>Salarios</h2>
+        <input type="submit" value="Agregar Campo" id="agregar-campo">
+        <input type="submit" value="Quitar Campo" id="quitar-campo">
+    </div>
+    
+    <div class="oculto" id="salarios-grupo-familiar">
+        <input type="submit" id="calcular-salario" value="Calcular">
+    </div>
+    <div class="oculto" id="resultados-salario">
+        <em id="salario-mayor"></em>
+        <em id="salario-menor"></em>
+        <em id="salario-promedio"></em>
+    </div>
+
+    <script src="./calculos-tarea6.js"></script>
+    <script src="./edad-grupo-familiar.js"></script>
+</body>
+</html>
