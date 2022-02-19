@@ -1,0 +1,26 @@
+.oculto{
+    display: none;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    
+}
+
+div #inputs{
+    background-color: rgb(124, 247, 204);
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: black 5px 5px 5px;
+   padding: 15px 15px 0px 15px; 
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 250px;
+    align-items: center;
+
+}
